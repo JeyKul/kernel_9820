@@ -104,7 +104,7 @@ static int gpex_clock_update_config_data_from_dt(void)
 
 	ret = gpexbe_clock_get_rate_asv_table(fv_array, asv_lv_num);
 	if (!ret)
-		GPU_LOG(MALI_EXYNOS_ERROR, "Failed to get G3D ASV table from CAL IF\n");
+		GPU_LOG(MALI_EXYNOS_DEBUG, "Failed to get G3D ASV table from CAL IF\n");
 
 	for (i = 0; i < asv_lv_num; i++) {
 		int cal_freq = fv_array[i].freq;

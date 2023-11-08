@@ -15,6 +15,7 @@
 
 #include <asm/byteorder.h>
 
+/*
 #define RTL8XXXU_DEBUG_REG_WRITE	0x01
 #define RTL8XXXU_DEBUG_REG_READ		0x02
 #define RTL8XXXU_DEBUG_RFREG_WRITE	0x04
@@ -30,6 +31,7 @@
 #define RTL8XXXU_DEBUG_ACTION		0x1000
 #define RTL8XXXU_DEBUG_EFUSE		0x2000
 #define RTL8XXXU_DEBUG_INTERRUPT	0x4000
+*/
 
 #define RTW_USB_CONTROL_MSG_TIMEOUT	500
 #define RTL8XXXU_MAX_REG_POLL		500
@@ -1081,7 +1083,6 @@ struct h2c_cmd {
 };
 
 enum c2h_evt_8723b {
-	C2H_8723B_DEBUG = 0,
 	C2H_8723B_TSF = 1,
 	C2H_8723B_AP_RPT_RSP = 2,
 	C2H_8723B_CCX_TX_RPT = 3,
@@ -1092,7 +1093,6 @@ enum c2h_evt_8723b {
 	C2H_8723B_HW_INFO_EXCH = 0x0a,
 	C2H_8723B_BT_MP_INFO = 0x0b,
 	C2H_8723B_RA_REPORT = 0x0c,
-	C2H_8723B_FW_DEBUG = 0xff,
 };
 
 enum bt_info_src_8723b {
@@ -1364,7 +1364,6 @@ struct rtl8xxxu_fileops {
 	u8 page_num_norm;
 };
 
-extern int rtl8xxxu_debug;
 
 extern struct rtl8xxxu_reg8val rtl8xxxu_gen1_mac_init_table[];
 extern const u32 rtl8xxxu_iqk_phy_iq_bb_reg[];

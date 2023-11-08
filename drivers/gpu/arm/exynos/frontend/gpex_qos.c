@@ -93,7 +93,7 @@ static int gpex_qos_get_table_idx(int clock)
 int gpex_qos_set(gpex_qos_flag flags, int val)
 {
 	if (!qos_info.is_pm_qos_init) {
-		GPU_LOG(MALI_EXYNOS_ERROR, "%s: PM QOS ERROR : pm_qos not initialized\n", __func__);
+		GPU_LOG(MALI_EXYNOS_DEBUG, "%s: PM QOS ERROR : pm_qos not initialized\n", __func__);
 		return -ENOENT;
 	}
 
@@ -107,7 +107,7 @@ int gpex_qos_set(gpex_qos_flag flags, int val)
 int gpex_qos_unset(gpex_qos_flag flags)
 {
 	if (!qos_info.is_pm_qos_init) {
-		GPU_LOG(MALI_EXYNOS_ERROR, "%s: PM QOS ERROR : pm_qos not initialized\n", __func__);
+		GPU_LOG(MALI_EXYNOS_DEBUG, "%s: PM QOS ERROR : pm_qos not initialized\n", __func__);
 		return -ENOENT;
 	}
 	gpexbe_qos_request_unset((mali_pmqos_flags)flags);
